@@ -16,9 +16,6 @@ const imgItemEl = createImageItemEl(galleryItems)
 
 galleryEl.insertAdjacentHTML('beforeend', imgItemEl)
 
-galleryEl.addEventListener('click' , onImageClick)
-
-
 function createImageItemEl(images) {
     return images.map(({ preview, original, description }) => {
         return `<li class="gallery__item">
@@ -33,15 +30,14 @@ function createImageItemEl(images) {
     }).join('');
 }
 
-
 // 4. Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из атрибута alt. Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия изображения.
 
 
 galleryEl.addEventListener('click', onImageClick)
 
-function onImageClick(event) {
+function onImageClick() {
     // event.preventDefault();
     const lightbox = new SimpleLightbox('.gallery__item a', 
-    {captionDelay: 250,   captionsData: 'alt', enableKeyboard: true});   
+    {captionDelay: 250,  captionsData: 'alt', enableKeyboard: true});   
 }
 
