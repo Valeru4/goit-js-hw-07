@@ -37,20 +37,11 @@ function createImageItemEl(images) {
 // 4. Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из атрибута alt. Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия изображения.
 
 
-galleryEl.addEventListener('click', onImageClik)
+galleryEl.addEventListener('click', onImageClick)
 
 function onImageClick(event) {
-    event.preventDefault();
+    // event.preventDefault();
     const lightbox = new SimpleLightbox('.gallery__item a', 
-    {captionDelay: 250,   captionsData: 'alt',
-close: true, enableKeyboard: true});   
-    lightbox.open();
+    {captionDelay: 250,   captionsData: 'alt', enableKeyboard: true});   
 }
 
-cardsGallery.addEventListener('click', function(e) {
-    e.preventDefault();
-    const lightbox = new SimpleLightbox('.gallery__item a', 
-    {captionDelay: 250, close: true, enableKeyboard: true});   
-    lightbox.open();
-
-});
